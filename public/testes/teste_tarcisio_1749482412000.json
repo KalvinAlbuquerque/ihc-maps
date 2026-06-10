@@ -1,0 +1,105 @@
+{
+  "metadata": {
+    "app": "Google Maps",
+    "data": "09/06/2026, 14:20:12",
+    "versao": "v2"
+  },
+  "perfil": {
+    "nome": "Tarcisio",
+    "faixa_etaria": "26-35",
+    "frequencia_uso": "Diariamente",
+    "contexto_uso": "Dirigindo",
+    "nivel_experiencia": "Avançado"
+  },
+  "tarefas": [
+    {
+      "id": "T1",
+      "titulo": "Busca e início de navegação",
+      "tempo_segundos": 24.1,
+      "meta_tempo_s": 30,
+      "dentro_meta_tempo": true,
+      "cliques": 4,
+      "meta_cliques": 5,
+      "dentro_meta_cliques": true,
+      "completou": "sim",
+      "likert": [5, 4, 5, 5, 5],
+      "likert_media": 4.8,
+      "comentario": ""
+    },
+    {
+      "id": "T2",
+      "titulo": "Busca com filtro de estabelecimento",
+      "tempo_segundos": 33.8,
+      "meta_tempo_s": 45,
+      "dentro_meta_tempo": true,
+      "cliques": 6,
+      "meta_cliques": 7,
+      "dentro_meta_cliques": true,
+      "completou": "sim",
+      "likert": [4, 4, 4, 5, 4],
+      "likert_media": 4.2,
+      "comentario": ""
+    },
+    {
+      "id": "T3",
+      "titulo": "Seleção de rota sem pedágio",
+      "tempo_segundos": 36.5,
+      "meta_tempo_s": 40,
+      "dentro_meta_tempo": true,
+      "cliques": 5,
+      "meta_cliques": 6,
+      "dentro_meta_cliques": true,
+      "completou": "sim",
+      "likert": [4, 4, 5, 4, 5],
+      "likert_media": 4.4,
+      "comentario": "No Waze tem um ícone mais visível pra isso, mas no Maps também dá pra achar rápido quando você sabe onde está."
+    },
+    {
+      "id": "T4",
+      "titulo": "Reportar incidente durante navegação",
+      "tempo_segundos": 17.2,
+      "meta_tempo_s": 20,
+      "dentro_meta_tempo": true,
+      "cliques": 3,
+      "meta_cliques": 3,
+      "dentro_meta_cliques": true,
+      "completou": "sim",
+      "likert": [5, 4, 4, 5, 5],
+      "likert_media": 4.6,
+      "comentario": "Isso uso todo dia no Waze. No Maps ficou em caminho diferente mas achei na primeira tentativa."
+    },
+    {
+      "id": "T5",
+      "titulo": "Adicionar parada intermediária",
+      "tempo_segundos": 28.4,
+      "meta_tempo_s": 35,
+      "dentro_meta_tempo": true,
+      "cliques": 4,
+      "meta_cliques": 5,
+      "dentro_meta_cliques": true,
+      "completou": "sim",
+      "likert": [5, 4, 5, 5, 5],
+      "likert_media": 4.8,
+      "comentario": ""
+    },
+    {
+      "id": "T6",
+      "titulo": "Busca com erro ortográfico",
+      "tempo_segundos": 11.9,
+      "meta_tempo_s": 20,
+      "dentro_meta_tempo": true,
+      "cliques": 3,
+      "meta_cliques": 4,
+      "dentro_meta_cliques": true,
+      "completou": "sim",
+      "likert": [5, 5, 5, 5, 5],
+      "likert_media": 5.0,
+      "comentario": "Passou rápido."
+    }
+  ],
+  "sus": {
+    "respostas": [5, 2, 4, 1, 4, 3, 4, 1, 5, 1],
+    "sus_score": 85.0,
+    "classificacao": "Excelente"
+  }
+}

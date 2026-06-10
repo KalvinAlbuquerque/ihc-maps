@@ -1,0 +1,152 @@
+{
+  "metadata": {
+    "app": "Google Maps",
+    "data": "09/06/2026, 20:54:50",
+    "versao": "v2"
+  },
+  "perfil": {
+    "nome": "ana carolina estrela",
+    "faixa_etaria": "18-25",
+    "frequencia_uso": "Diariamente",
+    "contexto_uso": "Dirigindo",
+    "nivel_experiencia": "Iniciante"
+  },
+  "tarefas": [
+    {
+      "id": "T1",
+      "titulo": "Busca e início de navegação",
+      "tempo_segundos": 33.64,
+      "meta_tempo_s": 30,
+      "dentro_meta_tempo": false,
+      "cliques": 4,
+      "meta_cliques": 5,
+      "dentro_meta_cliques": true,
+      "completou": "sim",
+      "likert": [
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "likert_media": 5,
+      "comentario": ""
+    },
+    {
+      "id": "T2",
+      "titulo": "Busca com filtro de estabelecimento",
+      "tempo_segundos": 25.93,
+      "meta_tempo_s": 45,
+      "dentro_meta_tempo": true,
+      "cliques": 3,
+      "meta_cliques": 7,
+      "dentro_meta_cliques": true,
+      "completou": "sim",
+      "likert": [
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "likert_media": 5,
+      "comentario": "exibiu um restaurante de culinaria havaiana. deveria ter uma opção para o user sugerir mudanças"
+    },
+    {
+      "id": "T3",
+      "titulo": "Seleção de rota sem pedágio",
+      "tempo_segundos": 88.15,
+      "meta_tempo_s": 40,
+      "dentro_meta_tempo": false,
+      "cliques": 10,
+      "meta_cliques": 6,
+      "dentro_meta_cliques": false,
+      "completou": "sim",
+      "likert": [
+        3,
+        3,
+        2,
+        1,
+        3
+      ],
+      "likert_media": 2.4,
+      "comentario": "demorei de achar a opção de evitar pedagio e quando consegui fiquei na duvida se estava destacando essa opção. não fiquei confiante. talvez destacar o local do pedagio seria mais adequado"
+    },
+    {
+      "id": "T4",
+      "titulo": "Reportar incidente durante navegação",
+      "tempo_segundos": 88.34,
+      "meta_tempo_s": 20,
+      "dentro_meta_tempo": false,
+      "cliques": 20,
+      "meta_cliques": 3,
+      "dentro_meta_cliques": false,
+      "completou": "nao",
+      "likert": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "likert_media": 1,
+      "comentario": "não consegui localizar mesmo apos o tempo. por ser algo que impacta muito acho que deveria ter mais visibilidade para essa opção"
+    },
+    {
+      "id": "T5",
+      "titulo": "Adicionar parada intermediária",
+      "tempo_segundos": 30.12,
+      "meta_tempo_s": 35,
+      "dentro_meta_tempo": true,
+      "cliques": 6,
+      "meta_cliques": 5,
+      "dentro_meta_cliques": false,
+      "completou": "sim",
+      "likert": [
+        5,
+        5,
+        5,
+        4,
+        1
+      ],
+      "likert_media": 4,
+      "comentario": "ele me direcionou para um posto em mogi das cruzes, sendo que a rota era lauro de freitas->camaçari"
+    },
+    {
+      "id": "T6",
+      "titulo": "Busca com erro ortográfico",
+      "tempo_segundos": 13.88,
+      "meta_tempo_s": 20,
+      "dentro_meta_tempo": true,
+      "cliques": 3,
+      "meta_cliques": 4,
+      "dentro_meta_cliques": true,
+      "completou": "sim",
+      "likert": [
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "likert_media": 5,
+      "comentario": ""
+    }
+  ],
+  "sus": {
+    "respostas": [
+      5,
+      3,
+      4,
+      2,
+      4,
+      5,
+      4,
+      3,
+      4,
+      3
+    ],
+    "sus_score": 62.5,
+    "classificacao": "Razoável"
+  }
+}
