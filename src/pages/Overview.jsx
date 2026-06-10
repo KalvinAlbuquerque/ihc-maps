@@ -1,4 +1,4 @@
-import { Bar } from 'react-chartjs-2'
+import { Bar, Chart } from 'react-chartjs-2'
 import { useNavigate } from 'react-router-dom'
 import { TASKS, TASK_META, susColor, susLabel, statusColor, CHART_OPTS } from '../utils'
 
@@ -115,6 +115,61 @@ export default function Overview({ data }) {
   const avgCliques  = +(allTasks.reduce((a, t) => a + t.cliques, 0) / allTasks.length).toFixed(1)
 
   const successColor = successPct >= 70 ? '#4ade80' : successPct >= 50 ? '#fbbf24' : '#f87171'
+
+  // User tempo/cliques vs meta ideal
+  const metaTempoAvg   = +(TASKS.reduce((s, t) => s + TASK_META[t].tempo,   0) / TASKS.length).toFixed(1)
+  const metaCliquesAvg = +(TASKS.reduce((s, t) => s + TASK_META[t].cliques, 0) / TASKS.length).toFixed(1)
+
+  const mkMixedData = (key, metaAvg) => ({
+    labels: sorted.map(d => d.perfil.nome),
+    datasets: [
+      {
+        type: 'bar',
+        label: key === 'tempo' ? 'Tempo médio (s)' : 'Cliques médios',
+        data: sorted.map(d => +(d.tarefas.reduce((s, t) => s + (key === 'tempo' ? t.tempo_segundos : t.cliques), 0) / d.tarefas.length).toFixed(1)),
+        backgroundColor: sorted.map(d => d._color + '44'),
+        borderColor:     sorted.map(d => d._color),
+        borderWidth: 1.5,
+        borderRadius: 4,
+      },
+      {
+        type: 'line',
+        label: `Meta ideal (${metaAvg}${key === 'tempo' ? 's' : ''})`,
+        data: Array(sorted.length).fill(metaAvg),
+        borderColor: 'rgba(200,200,200,0.45)',
+        borderDash: [6, 4],
+        borderWidth: 1.5,
+        pointRadius: 0,
+        fill: false,
+        tension: 0,
+      },
+    ],
+  })
+
+  const mixedOpts = (yLabel) => ({
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      ...CHART_OPTS.plugins,
+      legend: {
+        display: true,
+        labels: { color: '#5a5a5a', font: { family: "'IBM Plex Mono', monospace", size: 10 }, boxWidth: 20, boxHeight: 2, padding: 14 },
+      },
+    },
+    scales: {
+      x: {
+        grid: { display: false },
+        ticks: { color: '#a0a0a0', font: { size: 11 } },
+        border: { display: false },
+      },
+      y: {
+        min: 0,
+        grid: { color: 'rgba(255,255,255,.04)' },
+        ticks: { color: '#5a5a5a', font: { size: 10, family: "'IBM Plex Mono', monospace" } },
+        border: { display: false },
+        title: { display: true, text: yLabel, color: '#5a5a5a', font: { size: 10 } },
+      },
+    },
+  })
 
   // SUS chart (horizontal bar)
   const susChartData = {
@@ -258,6 +313,30 @@ export default function Overview({ data }) {
         </div>
         <TaskHeatmap data={sorted} />
       </div>
+
+      {/* ── Tempo/Cliques por usuário vs meta ── */}
+      <div className="grid-2">
+        <div className="card" style={{ marginBottom: 0 }}>
+          <div className="card-header">
+            <span className="card-title">Tempo Médio por Participante</span>
+            <span className="card-sub">vs. média ideal ({metaTempoAvg}s)</span>
+          </div>
+          <div style={{ height: 220 }}>
+            <Chart type="bar" data={mkMixedData('tempo', metaTempoAvg)} options={mixedOpts('segundos')} />
+          </div>
+        </div>
+        <div className="card" style={{ marginBottom: 0 }}>
+          <div className="card-header">
+            <span className="card-title">Cliques Médios por Participante</span>
+            <span className="card-sub">vs. média ideal ({metaCliquesAvg} cliques)</span>
+          </div>
+          <div style={{ height: 220 }}>
+            <Chart type="bar" data={mkMixedData('cliques', metaCliquesAvg)} options={mixedOpts('cliques')} />
+          </div>
+        </div>
+      </div>
+
+      <div style={{ marginBottom: '.75rem' }} />
 
       {/* ── Charts row ── */}
       <div className="grid-2">
